@@ -1,0 +1,22 @@
+body {
+    background-color: #3e3e3e;
+    font-family:courier, courier new, monospace, serif;
+    color: #ccc;
+    padding: 120px;
+    text-align: justify;
+
+  }
+a{
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+    text-decoration: none;
+    color: #ccc;
+}
+a:active{
+    text-decoration: none;
+    color: #ccc;
+}
+  
+  
