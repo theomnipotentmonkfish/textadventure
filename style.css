@@ -1,19 +1,23 @@
 body {
     background-color: #3e3e3e;
-    font-family:courier, courier new, monospace, serif;
+    font-family:courier, monospace, serif;
     color: #ccc;
-    padding: 120px;
+    padding-top:50px;
+    padding-right:120px;
+    padding-left:120px;
     text-align: justify;
-
   }
+
 a{
     text-decoration: none;
     color: #fff;
 }
+
 a:hover{
     text-decoration: none;
     color: #ccc;
 }
+
 a:active{
     text-decoration: none;
     color: #ccc;
