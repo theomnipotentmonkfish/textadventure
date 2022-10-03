@@ -1,0 +1,93 @@
+
+body {
+background-color: #3e3e3e;
+font-family:courier, monospace, serif;
+color: #ccc;
+padding-top:50px;
+padding-right:120px;
+padding-left:120px;
+text-align: justify;
+}
+
+@font-face {
+  font-family: bryonybiro;
+  src: url(Bryonyhandwritingbiro-Regular.ttf);
+}
+
+a {
+  text-decoration: none;
+color: #000;
+}
+
+a:active {
+text-decoration: none;
+color: #000;
+}
+
+a.maintextlink{
+    text-decoration: none;
+    color: #fff;
+}
+
+a.maintextlink:hover{
+    text-decoration: none;
+    color: #ccc;
+}
+
+a.maintextlink:active{
+    text-decoration: none;
+    color: #ccc;
+}
+
+.container {
+text-align: center;
+}
+
+.albumcover {
+font-family: bryonybiro;
+color: #000;
+margin-left: 50px;
+display: inline-block;
+  width: 400px;
+height: 400px;
+vertical-align: top;
+position: relative;
+}
+
+.albumtracks {
+display: inline-block;
+  width: 400px;
+height: 340px;
+vertical-align: top;
+text-align: left;
+position: relative;
+}
+
+.buttoncontainer {
+margin-top: 10px;
+text-align: center;
+}
+
+.albumcoveroverlay {
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+position: absolute;
+pointer-events:none;
+}
+
+.albumtrackwords {
+font-family: bryonybiro;
+color: #000;
+margin-left: 20px;
+margin-top: 20px;
+z-index: 100;
+position: relative;
+}
+
+.albumcoverwords {
+padding: 50px;
+z-index: 100;
+position: relative;
+}

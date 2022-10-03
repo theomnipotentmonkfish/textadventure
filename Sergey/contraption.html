@@ -5,26 +5,114 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 	<link rel="stylesheet" href="../style.css">
-    <title id="pagetitle">
+    <title>
+    The Mysterious Contraption
 	</title>
 </head>
 <body>
-You look down at the contraption, it has a small sign on it that says "Album Generator 3000".<br />
-<br />
-<br />
-You twiddle one of the satisfying-looking knobs, it does not move and appears to be stuck on a setting called "sad music for coding".<br />
+You look down at the contraption, it has a small sign on it that says "Album Generator 3000".
+You twiddle one of the satisfying-looking knobs, but it does not move and appears to be stuck on a setting called "sad music for coding".<br />
 <br />
 <br />
 You notice there is a microphone hanging in front of it, with a post-it note on it which says "Ask".<br />
 <br />
 You lean closer to it, and say:<br />
 <br />
-""<br />
+"<a href="contraption.html"><span id="newStory"></span></a>"<br />
 <br />
 The machine gurgles, it chimes, it makes strange squeaking noises and generally sounds quite alarming. Eventually, with maybe a little steam involved, a handwritten cd case, with a newly burnt cd inside of it,  is forcibly ejected from a slot onto the desk.<br />
 <br />
-<a href="sadalbumgenerator.html">>Look at the cd</a>
+<br />
+<a href="albumgenerator.html">>Look at the cd</a><br />
 <a href="musicshelf.html">>Go back to the shelf of music</a>
+	<script id="grammar" type="application/json">
+	{
+		"askorigin": [
+		"Generate me a new album", 
+		"Oh hi, like, my horoscope told me you totally, like, had some new #songs# for me?", 
+		"More #sad# #songs# for a happy Sergey, plz", 
+		"#songs.capitalize#, plz, thx.", 
+		"Hey, y'#twat#! #sad.capitalize# music, now.", 
+		"Erm. I find m'self in need of #sad# #songs#, help?", 
+		"New album, please, Bryony", 
+		"Oy! Bryony! Album time!", 
+		"Might I possibly have a new album, Bryony, if you feel so inclined?"
+		],
 
+		"twat":[
+		"twat",
+		"cunt",
+		"weirdo",
+		"overpriced sandwich",
+		"underused stapler",
+		"motheaten badger",
+		"part-time holographic fairy",
+		"monochrome wizard",
+		"short-sighted wombat",
+		"delightful bundle of oddness",
+		"weasel-juggling weirdo",
+		"bizarre collection of cells"
+		],
+
+		"sad":[
+		"sad",
+		"dismal", 
+		"dreary",
+		"morose", 
+		"melancholic", 
+		"bleak", 
+		"depressing", 
+		"miserable", 
+		"glum"
+		],
+
+		"songs":[
+		"songs",
+		"music",
+		"tunes"
+		]
+	}
+	</script>
+	<script src="https://cdn.rawgit.com/oncomouse/oncomouse.github.io/9b1cb417/javascripts/tracery/tracery.min.js"></script>
+<script>
+(function (tracery, baseEngModifiers){
+	var traceryGrammar;
+
+	function createStory() {
+
+		var output = document.querySelector('#newStory');
+		output.innerHTML = traceryGrammar.flatten('#askorigin#');
+        console.log(traceryGrammar.flatten('#askorigin#'))
+
+	}
+	function loadTracery(grammar) {
+		traceryGrammar = tracery.createGrammar(grammar);
+		traceryGrammar.addModifiers(baseEngModifiers);
+		createStory();
+		
+	}
+	document.addEventListener('DOMContentLoaded', function() {
+		if(typeof GRAMMAR === 'undefined') {
+			GRAMMAR = JSON.parse(document.querySelector('#grammar').innerHTML);
+			loadTracery(GRAMMAR);
+		} else if(typeof GRAMMAR === 'object') {
+			loadTracery(GRAMMAR);
+		} else if(typeof GRAMMAR === 'string') {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', GRAMMAR);
+			xhr.onload = function() {
+				if (xhr.status === 200) {
+					GRAMMAR = JSON.parse(xhr.responseText);
+					loadTracery(GRAMMAR);
+				}
+				else {
+					alert('Request failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		}
+	});
+})(tracery, baseEngModifiers)
+</script>
 </body>
 </html>

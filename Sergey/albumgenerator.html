@@ -1,0 +1,466 @@
+<!-- Ooh hello there, curious chap. -->
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<link rel="stylesheet" href="../albumgeneratorstyle.css">
+	<title>
+	The Sad Album Generator
+	</title>
+</head>
+<body>
+<div class="container">
+	<div class="albumcover">
+		<img src="../frontcase.png" class="albumcoveroverlay">
+		<div class="albumcoverwords">
+			<h1 id="albumtitle">
+			</h1>
+		</div>
+	</div>
+	<div class="albumtracks"> 
+		<div class="albumtrackwords" id="story"> 
+		</div>
+		<img src="../backcase.png" class="albumcoveroverlay">
+	</div>
+</div>
+
+	<script id="grammar" type="application/json">
+	{
+
+		"albumtitleorigin": [
+		"#sad.capitalize#  #songs.capitalize#  to  #code#  to", 
+		"#fucking#  #sad.capitalize#  #songs.capitalize#  to  #code#  to", 
+		"#delightfully#  #sad.capitalize#  #songs.capitalize#  to  #code#  to",
+		"#fucking#  #delightfully#  #sad.capitalize#  #songs.capitalize#  to  #code#  to",
+		"#well#,  this  is  #sad.capitalize#", 
+		"#well#,  this  is  #fucking#  #sad.capitalize#",
+		"#well#,  this  is  #delightfully#  #sad.capitalize#",
+		"#well#,  this  is  #fucking#  #delightfully#  #sad.capitalize#"
+		],
+
+		"sad":[
+		"sad",
+		"dismal", 
+		"dreary",
+		"morose", 
+		"melancholic", 
+		"bleak", 
+		"depressing", 
+		"miserable", 
+		"glum"
+		],
+
+		"well":[
+		"Well",
+		"Crikey",
+		"Good Lord",
+		"Gosh",
+		"Fuck Me",
+		"Heavens to Betsy",
+		"Good Golly",
+		"Fuckin' Hell",
+		"Arrrgh!",
+		"God"
+		],
+
+		"songs":[
+		"songs",
+		"music",
+		"tunes"
+		],
+
+		"code":[
+		"Code",
+		"Program",
+		"Slack Off",
+		"Debug",
+		"Concentrate",
+		"Think",
+		"Stare Into The Distance"
+		],
+
+		"coding":[
+		"coding",
+		"concentration",
+		"thinking",
+		"programming",
+		"debugging"
+		],
+
+		"fucking": [
+		"Fucking",
+		"Awfully",
+		"Bloody",
+		"Really Quite"
+		],
+
+		"delightfully": [
+		"Delightfully",
+		"Amazingly",
+		"Shockingly",
+		"Astoundingly",
+		"Astonishingly",
+		"Suprisingly"
+		],
+
+		"inconsolably":[
+		"Inconsolably",
+		"Hopelessly",
+		"Happily",
+		"Desperately",
+		"Miserably",
+		"Briefly",
+		"Confusingly",
+		"For a Bit",
+		"Delightfully",
+		"Inconveniently"
+		],
+
+		"origin": [
+		"<ol><li>#band#</li><li>#band#</li><li>#band#</li><li>#band#</li><li>#band#</li><li>#band#</li><li>#band#</li><li>#band#</li><li>#band#</li><li>#band#</li><li>#band#</li><li>#band#</li></ol>"
+		],
+		
+		"band":[
+		"#pulp#",
+		"#starsailor#",
+		"#muse#",
+		"#radiohead#",
+		"#nickcave#",
+		"#tomwaits#",
+		"#martinharley#",
+		"#theverve#",
+		"#boniver#",
+		"#joydivision#",
+		"#jeffbuckley#",
+		"#spiritualized#"
+		],
+		
+		"pulp":[
+		"<a href='https://open.spotify.com/track/7IgHTB9VMPwziPobbBbgfq'>Mis-Shapes</a> - Pulp",
+		"<a href='https://open.spotify.com/track/1pZcZCFoz8uJvLH2Hg3iEd'>Pencil Skirt</a> - Pulp",
+		"<a href='https://open.spotify.com/track/2fXKyAyPrEa24c6PJyqznF'>Common People</a> - Pulp</a>",
+		"<a href='https://open.spotify.com/track/0NWnWSkFT6p01JDgmQxbTT'>I Spy</a> - Pulp",
+		"<a href='https://open.spotify.com/track/2aC8wwfrM0YeTAzzk8hxqC'>Disco 2000</a> - Pulp",
+		"<a href='https://open.spotify.com/track/1GhXBQUNGCPKku01faaMQi'>Live Bed Show</a> - Pulp",
+		"<a href='https://open.spotify.com/track/05FgZdqxXg40X0WG8MmWMA'>Something Changed</a> - Pulp",
+		"<a href='https://open.spotify.com/track/6OiWR0dBoVnd0NpD0kCijF'>Sorted For E’s & Wizz</a> - Pulp",
+		"<a href='https://open.spotify.com/track/2BpRBPregNPge2fwfs7t38'>F.E.E.L.I.N.G.C.A.L.L.E.D.L.O.V.E.</a> - Pulp",
+		"<a href='https://open.spotify.com/track/5pcDlqgygjWQ75QYLM7mdL'>Underwear</a> - Pulp",
+		"<a href='https://open.spotify.com/track/2nBPqKLFQUeBQhs03cKGU3'>Monday Morning</a> - Pulp",
+		"<a href='https://open.spotify.com/track/3gP3IeMlNNb98geUB7SpPE'>Bar Italia</a> - Pulp",
+		"<a href='https://open.spotify.com/track/4j3obTRIyR7QzvdeQz9vaO'>Babies</a> - Pulp",
+		"<a href='https://open.spotify.com/track/0txLC5NA64M8siGn3mnET0'>Do You Remember The First Time?</a> - Pulp"
+		],
+
+		"starsailor":[
+		"<a href='https://open.spotify.com/track/6DilrWwewNb5WCRKkdGZT0'>Tie up My Hands</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/4uONr3H4dj82vr4Bt5xXF0'>Poor Misguided Fool</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/1Xe4r9nlMwSEKIjutoul2z'>Alcoholic</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/6SHdWbbIFoftFDeMPa0P4F'>Lullaby</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/20fUrFnUxqCJvTO40j6DbA'>Way to Fall</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/4rLkbVOSzTH6A72Kp3zUqx'>Fever</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/4DOElywGGsnED7UWIguhvZ'>She Just Wept</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/0qTTq474YNdNcOfEGNQy8Y'>Talk Her Down</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/49GLs5Su3ubranGBLfn5vM'>Love Is Here</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/3C4p4lOFmjKukozglG5KRv'>Good Souls</a> - Starsailor",
+		"<a href='https://open.spotify.com/track/486tJ8M75p6AgcOp77Wxq0'>Coming Down</a> - Starsailor"
+		],
+
+		"muse":[
+		"<a href='https://open.spotify.com/track/5wq8wceQvaFlOZovDtfr0j'>Sunburn</a> - Muse",
+		"<a href='https://open.spotify.com/track/5rupf5kRDLhhFPxH15ZmBF'>Muscle Museum</a> - Muse",
+		"<a href='https://open.spotify.com/track/3IwAWUa9JeTbwumBPvnOj9'>Fillip</a> - Muse",
+		"<a href='https://open.spotify.com/track/3vMrcGW4o35zY6vXjWb1p7'>Falling Down</a> - Muse",
+		"<a href='https://open.spotify.com/track/6Jf7Sx68vsWFKeWjOxcLhQ'>Cave</a> - Muse",
+		"<a href='https://open.spotify.com/track/2sCFFlnYg6Lk75GCcfSXEz'>Showbiz</a> - Muse",
+		"<a href='https://open.spotify.com/track/6kyxQuFD38mo4S3urD2Wkw'>Unintended</a> - Muse",
+		"<a href='https://open.spotify.com/track/2nRZDoVjdDujqBgieeUsQQ'>Uno</a> - Muse",
+		"<a href='https://open.spotify.com/track/27SwNPCT06QkpufKP3t5ev'>Sober</a> - Muse",
+		"<a href='https://open.spotify.com/track/2oG793j2f1XoHkxURBtHyc'>Escape</a> - Muse",
+		"<a href='https://open.spotify.com/track/1DaqwHixRNyjy5zfKWg4Rl'>Overdue</a> - Muse",
+		"<a href='https://open.spotify.com/track/1uz7XNGIPwugpFvRqQ5XtQ'>Hate This and I’ll Love You</a> - Muse",
+		"<a href='https://open.spotify.com/track/5PAZBoJLrrumblJ8gGuOe2'>Spiral Static</a> - Muse",
+		"<a href='https://open.spotify.com/track/2VrJMuLt2m9HbifGrKWHqk'>New Born</a> - Muse",
+		"<a href='https://open.spotify.com/track/0j3obufLXq5toSs592dX9U'>Bliss</a> - Muse",
+		"<a href='https://open.spotify.com/track/00jXDm9BLNZdf2QC3Br0r7'>Space Dementia</a> - Muse",
+		"<a href='https://open.spotify.com/track/7BxQJTzBjhfpx8PVT1qASg'>Hyper Music</a> - Muse",
+		"<a href='https://open.spotify.com/track/2UKARCqDrhkYDoVR4FN5Wi'>Plug in Baby</a> - Muse",
+		"<a href='https://open.spotify.com/track/177MZraDAxjRqqtZBz5Vhn'>Citizen Erased</a> - Muse",
+		"<a href='https://open.spotify.com/track/2GflWmANujk7PnmEcv5RbF'>Micro Cuts</a> - Muse",
+		"<a href='https://open.spotify.com/track/033IZMP0kKR0RC1h4Z2NVy'>Screenager</a> - Muse",
+		"<a href='https://open.spotify.com/track/2lS9rFLUICaha7SzIAEZnk'>Darkshines</a> - Muse",
+		"<a href='https://open.spotify.com/track/5PK1JCSdr34gWgzYHgt3Jq'>Feeling Good</a> - Muse",
+		"<a href='https://open.spotify.com/track/2S9tY6X04CTb9ZAA2PCpC2'>Megalomania</a> - Muse",
+		"<a href='https://open.spotify.com/track/6WZ2HHv1VUeRzv3ZnirZsW'>Futurism</a> - Muse"
+		],
+
+		"radiohead":[
+		"<a href='https://open.spotify.com/track/35YyxFpE0ZTOoqFx5bADW8'>Nude</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/4wajJ1o7jWIg62YqpkHC7S'>Weird Fishes/ Arpeggi</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/5Qv2Nby1xTr9pQyjkrc94J'>All I Need</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/15irEKZ9D6FQqLoZ1qJ1Cx'>Faust Arp</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/02ppMPbg1OtEdHgoPqoqju'>Reckoner</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/48X4D1FYOShPz2VF3YdfCF'>House Of Cards</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/4T1iiabe7G0UjWQJCY6NE2'>Videotape</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/2a1iMaoWQ5MnvLFBDv4qkf'>High and Dry</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/73CKjW3vsUXRpy3NnX4H7F'>Fake Plastic Trees</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/1tZcw7GtIqviL32bzaKdSo'>(Nice Dream)</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/5XuU9htN358NTMCcqRvfDV'>Bullet Proof… I Wish I Was</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/2QwObYJWyJTiozvs0RI7CF'>Street Spirit (Fade Out)</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/0z1o5L7HJx562xZSATcIpY'>Exit Music (For A Film)</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/63OQupATfueTdZMWTxW03A'>Karma Police</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/10nyNJ6zNy2YVYLrcwLccB'>No Surprises</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/1UuaWKypSkIHxFZD03zw4m'>The Tourist</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/2rtGaCAeYtmcIvuZsvgTf6'>How to Disappear Completely</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/0xivCtzVVrdeq32s8EnOO6'>In Limbo</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/1W5XugQJGhnSATMI5n002M'>Idioteque</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/0tDn82XkoueVV5q9G7OUAv'>Packt Like Sardines In a Crushd Tin…</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/55q3Ro66yXWi9rsEddeEN4'>Pyramid Song</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/7Hg6a7tZsVTkXnBUepjZU6'>You And Whose Army?</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/5JZ1jTanqLWVuThmZ6XRAc'>I Might Be Wrong</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/521OhfIeThXJKiTyz0m883'>Knives Out</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/09rXQjOX61UGL36z76q8OS'>Morning Bell/Amnesiac</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/0kSDNLOdJqpGhV2vtVFWmS'>Dollars and Cents</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/5xJc58mBWz68WhwU2n5seR'>Life In a Glasshouse</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/4xkcGfpM9RwB4IiQ7yx2dB'>2 + 2 = 5</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/7tFsUfrmyBvLdvIByreecz'>Sail To The Moon</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/42BeMThJuzIQe1oQvhDwgl'>Go To Sleep</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/2dDqsUr11Mv0qhXByNfbJx'>Where I End and You Begin</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/0dco6ZSO8vnL2fHRi10XSY'>We Suck Young Blood</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/3qhLTNphwAepIyHJF9ZMv0'>The Gloaming</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/6GMGuW9ne8D3CvjkJoKJeg'>I Will</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/5kDi4uwQnHM920ElxNdzUO'>A Punch Up at a Wedding</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/0mEOPRobXw671f2H68XzoB'>Scatterbrain</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/2QeutlLcJf2V1cMUUsDFT1'>Lotus Flower</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/6ttYF5VadzTssGV2i1Q08T'>Codex</a> - Radiohead",
+		"<a href='https://open.spotify.com/track/05NZMYuLR71Z3qrZOUiUm2'>Give Up The Ghost</a> - Radiohead"
+		],
+
+		"nickcave":[
+		"<a href='https://open.spotify.com/track/2wHv6LZbHjXKnjredCjd9A'>Song of Joy</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/04e1VQ69ll2TR5Jp8F2n5B'>Henry Lee</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/5EddE7WsqxsTVrCifoVPyV'>Lovely Creature</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/3OwtuzRo8mc7lgsBau9MWk'>Where the Wild Roses Grow</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/4m8rxwbNsZTNcl7p9jPByg'>The Kindness of Strangers</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/4z2G4fupQsRaIzpcIHfIIK'>Easy Money</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/00O14PokKAgP9ZsQEFGLuY'>Spell</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/4qExPCZ5dATTjeMqP1UMMD'>Carry Me</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/29FQEJUtBAnxWEkux39d7I'>O Children</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/6OpnfAOr0fTok9HfJCflvl'>As I Sat Sadly By Her Side</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/6amCSRyUCXzlEoybtwVvHx'>And No More Shall We Part</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/3uMftduOdXs0SUw4cB3kCW'>Hallelujah</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/0aKozTzglADfnFue4Vwuif'>Love Letter</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/4eriYvLzd50Fxes5eZZeLE'>Fifteen Feet of Pure White Snow</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/5Flyry8kwnmeuvdSHE4mNj'>God Is in the House</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/2rGUeavBOvYxpm9mbYLSm3'>Oh My Lord</a> - Nick Cave & The Bad Seeds",
+		"<a href='https://open.spotify.com/track/0z36IGMPurAcjarlbjEnG7'>Sweetheart Come</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/4tnZ3Xx55B1Fr0Qo7piP6A'>The Sorrowful Wife</a> - Nick Caves",
+		"<a href='https://open.spotify.com/track/47vUv3pKPNkykZZAX2EZAl'>We Came Along This Road</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/199AXvnWmuNdW9nzfxaVJS'>Gates to the Garden</a> - Nick Cave",
+		"<a href='https://open.spotify.com/track/0iaqHNP9OioKgjaRT3SXzS'>Darker With the Day</a> - Nick Cave"
+		],
+
+		"tomwaits":[
+		"<a href='https://open.spotify.com/track/71vyz1pfzmj1MQvJYOsPlb'>Tom Traubert's Blues</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/1yXoIyMg0figR9VfMGFlrG'>Jitterbug Boy</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/5tvH52xn3i7gQQQRfBbD0T'>I Wish I Was In New Orleans</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/2Byq9AiqDPnTGaEgnGt6Q4'>The Piano Has Been Drinking (Not Me)</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/0y6h8XEByp5KcMIrgA8WUD'>Invitation To The Blues</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/7uOwJoButelmoPVfRcHr8H'>Bad Liver And A Broken Heart</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/4isuUQhckX6ophYvVEEbYr'>The One That Got Away</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/1G864z3ZxSKYUD3fBKHcMN'>Small Change</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/0jvFqRqgbo1v7ETPW5X52M'>I Can't Wait To Get Off Work</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/6BRg8FpfpKUbXeE4Jv7U5u'>Christmas Card From A Hooker...</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/2g8SL3aQv1c2Yh7aPJRsyk'>Romeo Is Bleeding</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/082gz1OiigBCxN8N0e4l7s'>Wrong Side Of The Road</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/5jeSEiO3suG5tzhfaMyK3S'>Kentucky Avenue</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/1Xmm3tubKm8YVePjgsOKEO'>A Sweet Little Bullet...</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/1APu9lSrXWUarvP61myILk'>Blue Valentines</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/5TeoCsHbzWo9UgMW3rv7JL'>Clap Hands</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/3tFZWBhDGrahJZOLNOnWiZ'>Cemetary Polka</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/6PVCcLstrgObm8aw6GsV02'>Jockey Full Of Bourbon</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/7jYGrZYqRXcK2IuJQJdMA9'>Tango Till They're Sore</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/0cFrPgL6Cz2DFyVmdTd740'>Diamonds And Gold</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/4Y0trsCAypDS1RUOtxajSz'>Hang Down Your Head</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/65TIlSzHRK25EE5P972aYG'>Time</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/2fScFKA4WWLTFWVoJ1UQW7'>9th & Hennepin</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/6fqnaA3YKILG71D3zTOVS3'>Blind Love</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/3fPqUl4lPDUQmY0T7dKUv2'>Downtown Train</a> - Tom Waits",
+		"<a href='https://open.spotify.com/track/4HJi8hcqPI6iRVPlMqpBov'>Anywhere I Lay My Head</a> - Tom Waits"
+		],
+
+		"martinharley":[
+		"<a href='https://open.spotify.com/track/0rqtm7x6C0ZVWmMAmuZZNe'>Summer Shadows</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/55BcI5zzKDin69KUBsegYL'>Del Mundo</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/3v8wOtacbnd9Mv0jxdQOdJ'>Nobody's Fool</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/2MDhnFGm8Um41u4sDRgo9W'>Steady Rolling</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/6UgRX5rgCjGEXjBWcv21qf'>Small Voice</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/5q23KFkbijc5zI6C98gcgd'>Some Fires</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/22pEFInnDLWKGhVUe0HaId'>Drown Our Sorrows</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/75NRR89VOQ2zhH0rIVkEHC'>I Shall Be Released</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/03rDt2wQR8wqzyIf3lctDR'>Dealer</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/4a248uFs7HM8TFOeY5O2Xb'>Carnival Girl</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/3FPgoAIsneQ1jANkp4k36Z'>If The Worlds Gonna Change</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/4bn5I67Icy8kMBasEP7Y8U'>Lonely With You</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/35ieolLT8dwKfiPjtyTFz2'>This Ocean</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/4QovrImnEDI0OQE0zNaM7N'>Blues At My Window</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/1hG13NDVWXy2ShZZcrmSxW'>Somebody New</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/2TlBFRO1u6xwmbhig9JXyK'>One For The Road</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/5LZ02IwPMBkLWPdx1Zi0eZ'>Amelie</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/3cmnIRKIZwiHwSgTWj8aq3'>How Long</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/4J6T7Tn491pkGznZH3PQBV'>Blues At My Window</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/6fXyv8hsxR6Lhu3bi5yXkU'>End Of The World</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/0qb9n2NDUGmIOxayr8vNfn'>Darcy's Car</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/5XR04dHWi2ZFJmtjUj9Ufu'>Hand To Hold</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/2Hqlq485cRApijTHMTlenP'>Winter Coat</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/1KEtHhpWcvpPFliEgV3qFW'>Cowley Road</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/49IVPGmkqjEV3J0yr6P1a9'>Cardboard King</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/7ooiwBzU2rHB30yeMhynpq'>Winter Coat</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/3v4OKKCDZajjLOaZBzphCq'>Goodnight Irene</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/3qiYKQ6ExXERSV99XFzY6g'>Can't Help Moving</a> - Martin Harley",
+		"<a href='https://open.spotify.com/track/5plBSxmDNw2D73eGybFFJ7'>Nobodys Fault But Mine</a> - Martin Harley"
+		],
+
+		"theverve":[
+		"<a href='https://open.spotify.com/track/57iDDD9N9tTWe75x6qhStw'>Bittersweet Symphony</a> - The Verve",
+		"<a href='https://open.spotify.com/track/6OgWHP8rRXiq7VMaryVaVo'>Sonnet</a> - The Verve",
+		"<a href='https://open.spotify.com/track/1mGtS5RYUKmoOofscGAnlv'>The Drugs Don’t Work</a> - The Verve",
+		"<a href='https://open.spotify.com/track/6DzO0V24CQ3P7pcJccZHNG'>Catching The Butterfly</a> - The Verve",
+		"<a href='https://open.spotify.com/track/0bMo2W3orZZZXVEN91KKsC'>Neon Wilderness</a> - The Verve",
+		"<a href='https://open.spotify.com/track/0QhllvlmfPuS5HKcoJoOAS'>Space And Time</a> - The Verve",
+		"<a href='https://open.spotify.com/track/6siPQTzmyVZeg2m9fCcBbr'>Weeping Willow</a> - The Verve",
+		"<a href='https://open.spotify.com/track/0bw1li9y32rw40HGodRShs'>Lucky Man</a> - The Verve",
+		"<a href='https://open.spotify.com/track/1GAII6rrpjZKihrOFfuUxT'>One Day</a> - The Verve",
+		"<a href='https://open.spotify.com/track/6joouETmNXvMp5bBjasWCJ'>This Time</a> - The Verve",
+		"<a href='https://open.spotify.com/track/0zhYmfxcewQQay6pDajX74'>Velvet Morning</a> - The Verve"
+		],
+
+		"boniver":[
+		"<a href='https://open.spotify.com/track/6a1wMgJ42Okk5LjulbrtcZ'>Flume</a> - Bon Iver",
+		"<a href='https://open.spotify.com/track/1RT3dWhDmDG6laAXSUJ4c1'>Lump Sum</a> - Bon Iver",
+		"<a href='https://open.spotify.com/track/1HkOPLwAJH3kE8UnqgxF4s'>Skinny Love</a> - Bon Iver",
+		"<a href='https://open.spotify.com/track/4gNYyq3cl2qVCRtVDsTDKU'>The Wolves</a> - Bon Iver",
+		"<a href='https://open.spotify.com/track/7vE7w0zMSYRR29fIZBTiyp'>Blindsided</a> - Bon Iver",
+		"<a href='https://open.spotify.com/track/6afJTmreY8lMnG9F4Uo1tM'>Creature Fear</a> - Bon Iver",
+		"<a href='https://open.spotify.com/track/0XltgXfjLVvxY0intOijLq'>Team</a> - Bon Iver",
+		"<a href='https://open.spotify.com/track/64jVNNTwT0NdQbqqUIa8gi'>For Emma</a> - Bon Iver",
+		"<a href='https://open.spotify.com/track/1D39ZETXfcAFYaGruPHEzB'>re:stacks</a> - Bon Iver"
+		],
+
+		"joydivision":[
+		"<a href='https://open.spotify.com/track/3bMdWvDfVZwwEkPVSmIqt1'>Atrocity Exhibition</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/49Zt8N0m0RLLFzCELwV7yG'>Isolation</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/1HEHQ6UgRvbJ4byX7JIuF9'>Passover</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/2xdVantHk5zayugYswViOh'>Colony</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/3sAsM39lExnrDY9R3NCNh2'>A Means to an End</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/0CB8UyGmMO0G7nLEmjmCyn'>Heart and Soul</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/5RaquHTS3o2qz44TVyLzKg'>Twenty Four Hours</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/5r6ADOcMFbdo5VSgTmjXfw'>The Eternal</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/4tX1L7YYwkXeQAuQJ4Yhl2'>Decades</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/2OPmhk5vO4qiYE4LEAC9hs'>Disorder</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/4sv6PcG4kX19kTP5HUV4VN'>Day of the Lords</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/4dYME2vEklDwBIYYxZ1tRx'>Candidate</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/0ETHMWVurMZA72k2uUESfq'>Insight</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/6Ox9HWLHipsG6RH2a3eB8h'>New Dawn Fades</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/5YiSSBURCIz0qlOoL3la8w'>She’s Lost Control</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/1HIV7KpOnHL32AKth0l1eU'>Sadowplay</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/5YCjJwmUKpUQRzgPDm3iFm'>Wilderness</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/4yvgL1k1WkuSEHkMPhDF5X'>Interzone</a> - Joy Division",
+		"<a href='https://open.spotify.com/track/2kRkLYYspTSmsVjME4Vuke'>I Remember Nothing</a> - Joy Division"
+		],
+
+		"jeffbuckley":[
+		"<a href='https://open.spotify.com/track/3wBy12K7BHKHJspUwJw8fq'>Mojo Pin</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/64SIlhd3BaHCCMSfajXG7l'>Grace</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/0y5CnV2idm2KkQEudDjfDT'>Last Goodbye</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/1StXVL5gClph4z4XzanYko'>Lilac Wine</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/6PBzdsMi6YNdYAevzozBRi'>So Real</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/3pRaLNL3b8x5uBOcsgvdqM'>Hallelujah</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/6Jv7kjGkhY2fT4yuBF3aTz'>Lover, You Should've Come Over</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/4apuooN0LA5LZXeHog3nvb'>Corpus Christi Carol</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/7bf4nfz09yp6w7L7r9hQ1V'>Eternal Life</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/6q3wafztoGDT3nQYWVfyuO'>Dream Brother</a> - Jeff Buckley",
+		"<a href='https://open.spotify.com/track/6UuVONmxXwTKN1ISepuAoQ'>Forget Her</a> - Jeff Buckley"
+		],
+
+		"spiritualized":[
+		"<a href='https://open.spotify.com/track/0fOjUafaAhJV16oRBgCtz7'>Ladies and gentlemen...</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/6DBsox9g6jOsWerFwrK7Gx'>Stay with Me</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/1H6A0Uc3GNIxHmd7fbuwwo'>Home of the Brave</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/5jxN9knH0vlfpN2Ft7a5xi'>Broken Heart</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/2SmPYXFXcZTexcULk6ofQj'>Cool Waves</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/6HhEUsFdNabIKGP8ouJY2K'>Sweet Talk</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/0QPRJb3xZpF8JJgYmvneRu'>Death Take Your Fiddle</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/6TdG8ruJBKjF0dHzwKZ9aj'>Soul On Fire</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/1VIp2QeXliYox95JbIQvxf'>Sitting On Fire</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/2OI7okees3lBKQo0Mj6H0O'>Baby I'm Just a Fool</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/4cPJZpuU9qg5FpsYWi4Czc'>Don't Hold Me Close</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/1hwZmXyMNW5HnUeLHNktWh'>The Waves Crash In</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/6t7pbBjCCTw9yboTHaBW2S'>Borrowed Your Gun</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/2gdjsSQ8jrGy3EeWzkOgrj'>Goodnight Goodnight</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/5FY4Ppew9f99Q6m00VTzli'>Lay It Down Slow</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/1xBa0Dg6OwrA8jCLS44c5n'>Oh Baby</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/2dNcajANPqB8c7f3I1Aekt'>Lord Let It Rain On Me</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/610JbGv0RWdRjBOP8eAfI6'>The Ballad of Richie Lee</a> - Spiritualized",
+		"<a href='https://open.spotify.com/track/0SiN5YdwNm8wVdsOr6ILyQ'>Rated X</a> - Spiritualized"
+		]
+	}
+	</script>
+	<script src="https://cdn.rawgit.com/oncomouse/oncomouse.github.io/9b1cb417/javascripts/tracery/tracery.min.js"></script>
+<script>
+(function (tracery, baseEngModifiers){
+	var traceryGrammar;
+
+	function createStory() {
+		var output = document.querySelector('#story');
+		
+		var stories = [];
+			stories.push('<p>' + traceryGrammar.flatten('#origin#').replace(/\n\n/g,'</p><p>') + '</p>');
+		
+		output.innerHTML = stories.join();
+
+		var albumtitleoutput = document.querySelector('#albumtitle');
+		albumtitleoutput.innerHTML = traceryGrammar.flatten('#albumtitleorigin#');
+	}
+	function loadTracery(grammar) {
+		traceryGrammar = tracery.createGrammar(grammar);
+		traceryGrammar.addModifiers(baseEngModifiers);
+		createStory();
+		
+	}
+	document.addEventListener('DOMContentLoaded', function() {
+		if(typeof GRAMMAR === 'undefined') {
+			GRAMMAR = JSON.parse(document.querySelector('#grammar').innerHTML);
+			loadTracery(GRAMMAR);
+		} else if(typeof GRAMMAR === 'object') {
+			loadTracery(GRAMMAR);
+		} else if(typeof GRAMMAR === 'string') {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', GRAMMAR);
+			xhr.onload = function() {
+				if (xhr.status === 200) {
+					GRAMMAR = JSON.parse(xhr.responseText);
+					loadTracery(GRAMMAR);
+				}
+				else {
+					alert('Request failed.  Returned status of ' + xhr.status);
+				}
+			};
+			xhr.send();
+		}
+	});
+})(tracery, baseEngModifiers)
+</script>
+As you look at the track listing, you feel like the individual tracks have some connection to Spotify, you touch them, and discover something.<br />
+<br />
+A note falls onto the desk, it reads:<br />
+<br />
+You'll have to save them to a playlist yourself, sorry, APIs are beyond me.<br />
+Mysterious.<br />
+<br />
+<br />
+<a href="contraption.html" class="maintextlink">>Look at the Album Generator 3000 again</a>
+</body>
+</html>
