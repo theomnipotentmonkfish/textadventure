@@ -13,25 +13,52 @@
 You look out of the back door, then look down, and put on the wellies waiting for you, as you left your shoes at the front door.<br />
 <br />
 <br />
-Behind the house there is a small patio, with some really nice looking brick paving. Another corner sofa is here, but this one is waterproof. As it is good weather (presumably scorching heat is still being imagined) there are cushions on it, which prove to be suprisingly comfortable.<br />
+Behind the house there is a small patio, with some really nice looking brick paving. Another corner sofa is here, but this one is waterproof. As it is good weather (presumably scorching heat is still being imagined by you) there are cushions on it, which prove to be suprisingly comfortable.<br />
 <br />
 <br />
 If it is night, then there are cafe-style fairy lights, as well as some completely overkill RGB floodlights. On the patio is a very shocked looking chiminea. His name is Jim, and he looks even more shocked when he is on fire at night.
 <br />
 <br />
-You follow the path down to the end of the garden (about three steps of your particular legs), and see an unusual assortment of sheds, aviary and odd looking structures. A ferret comes out omto a balcony and stares at you. You were not previously aware that ferrets could have balconies, but this one does. His name is Angus. He looks... ethusiastic.<br />
+You follow the path down to the end of the garden (about three steps of your particular legs), and see an unusual assortment of sheds, an aviary and other odd looking structures. A ferret comes out onto a balcony and stares at you. You were not previously aware that ferrets could have balconies, but this one does. His name is <span class="collapsible">Angus.</span> 
+<div class="content">
+  <img src="../angus.png">
+</div>
+He looks... ethusiastic.<br />
 <br />
 <br />
 You open the door to a shed, but can't get in. You realise all these structures are connected by tubes, doors and catflaps. They look sturdy, if a little... informal. Clearly this has been built by some who Uses Drills.
-There is a somewhat chonky albino ferret asleep in a repurposed chicken coop inside. His name is Michael. Eventually he gets up, and squints at you, short-sightedly.
+There is a somewhat chonky albino ferret asleep in a repurposed chicken coop inside. His name is <span class="collapsible">Michael.</span> 
+<div class="content">
+  <img src="../michael.png">
+</div> Eventually he gets up, and squints at you, short-sightedly.
 <br />
 <br />
-Behind you, is another connected structure, it contains a crashmat, a box of ping pong balls, a slide and a small white ferret asleep in a hammock. You were also not aware that ferrets like to own slides, ping pong balls, crashmats or hammocks, but this chap seems content. He does not wake up, but his name is Frankie.
+Behind you, is another connected structure, it contains a crashmat, a box of ping pong balls, a slide and a small white ferret asleep in a hammock. You were also not aware that ferrets like to own slides, ping pong balls, crashmats or hammocks, but this chap seems content. He does not wake up, but his name is <span class="collapsible">Frankie.</span> 
+<div class="content">
+  <img src="../frankie.png">
+</div>
 <br />
 <br />
 You walk back to the house, with several weasels staring at you unnervingly, whilst a squirrel shouts down from the beech tree above.<br />
 <br />
 <br />
-<a href="kitchen.html" >>Go back into the Kitchen</a>
+<a href="ferrettreats.html">>Get the ferrets a treat</a>
+<a href="kitchen.html">>Go back into the Kitchen</a>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        }
+      });
+    }
+</script>
 </body>
 </html>
