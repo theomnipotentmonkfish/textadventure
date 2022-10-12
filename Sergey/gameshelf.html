@@ -13,8 +13,38 @@
 You pull a game off of the shelf and put it on the coffee table. 
 <br />
 <br />
+	<div class="imgcontainer"><img src="../images/games/1.png" width="300" id="randomImage"></div><br />
+<br />
+<br />
 <a href="gameshelf.html">>Look at another game</a><br />
 <a href="livingroom.html">>Put it back</a><br />
+	<script>
 
+		var items = [
+		"../images/games/carcassonne.png", 
+		"../images/games/catan.png", 
+		"../images/games/witches.jpg",
+		"../images/games/adventuretimefluxx.webp",
+		"../images/games/carcassonne.png",
+		"../images/games/catan.png",
+		"../images/games/chemistryfluxx.webp",
+		"../images/games/criticalrolemunchkin.webp",
+		"../images/games/discworld.webp",
+		"../images/games/dixit.webp",
+		"../images/games/forbiddenisland.jpg",
+		"../images/games/gormenghast.jpg",
+		"../images/games/jonathanstrange.jpg",
+		"../images/games/machikoro.webp",
+		"../images/games/miceandmystics.webp",
+		"../images/games/munchkin.webp",
+		"../images/games/starfluxx.jpg",
+		"../images/games/tokyohighway.webp",
+		"../images/games/wingspan.webp" ];
+	
+		var output = document.querySelector('#randomImage');
+		output.src = items[Math.floor(Math.random()*items.length)];
+	
+		console.log(random_item(items));
+	</script>
 </body>
 </html>
